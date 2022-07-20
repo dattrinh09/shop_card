@@ -1,0 +1,60 @@
+.woo-cart{
+    .container{
+        position: relative;
+        .woo-title{
+            font-family: 'Montserrat', sans-serif;
+            &__text{
+                @include displayGap(20px);
+                letter-spacing: 2px;
+                padding-top: 37px;
+                font-size: 38px;
+                h1{
+                    &:nth-child(1){
+                        font-weight: 900;
+                    }
+                    &:nth-child(2){
+                        font-weight: 300;
+                    }
+                }
+            }
+    
+            &__breadcumbs{
+                font-size: 14px;
+                font-family: 'Source Sans Pro', sans-serif;
+                .breadcumbs-list{
+                    @include displayGap(18px);
+                    &__item{
+                        margin-top: 90px;   
+                        padding-bottom: 17px;  
+                        &:nth-child(odd){
+                            color: $link;
+                            font-weight: 500;
+                        }               
+                        &:nth-child(even){
+                            @include imgCustom(18px, 15px);
+                        }
+                        &:last-child{
+                            color: rgba(0,0,0,0.5);
+                            position: relative;
+                            &::after{
+                                content: "";
+                                position: absolute;
+                                width: 100%;
+                                left: 10%;
+                                top: 85%;
+                                border-bottom: 4px solid red;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        .cart-icon{
+            position: absolute;
+            right: -12px;
+            top: 15px;
+            @include imgCustom(200px, 200px);
+        }
+    }
+}

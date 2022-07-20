@@ -1,0 +1,57 @@
+.top-nav{
+    .container{
+        position: relative;
+        .phone-num{
+            @include paddingStyle(18px, 14px);
+            @include displayGap(15px);
+            width: 14%;
+            padding-left: 0;
+            border-right: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .sns{
+            width: 25%;
+            border-right: 1px solid rgba(0,0,0,0.1);
+            display: flex;
+            &-list{
+                width: 230px;
+                margin: auto;
+                @include paddingStyle(18px, 14px);
+                @include displayGap(20px);
+            }
+        }
+    
+        .menu{
+            padding-left: 40px;
+            @include paddingStyle(15px, 15px);
+            @include displayGap(15px);
+            
+            &-list{
+                @include displayGap(15px);
+                &__item{
+                    a{
+                        @include displayGap(5px);
+                        position: relative;
+                        i{
+                            position: absolute;
+                            top: 7px;
+                            color: $text;
+                            font-size: 10px;
+                           }
+                        p{
+                            margin-left: 10px;
+                        }
+                    }
+                }
+            }
+            &-button{
+                position: absolute;
+                @include btnSize(30px, 110px, 0, 0);
+                font-size: 14px;
+                letter-spacing: 1px;
+                top: 10px;
+                right: 0;
+            }
+        }
+    }
+}

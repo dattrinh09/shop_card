@@ -1,0 +1,33 @@
+$primary: rgb(244,246,247);
+$secondary: rgb(73,76,100);
+$cart: rgb(182,198,201);
+$cart-1: rgb(240,243,242);
+$cart-2: rgb(153,169,181);
+$text: rgb(95,114,127);
+$text2: rgb(60,57,80);
+$text3: rgb(97, 93, 126);
+$text4: rgb(167,180,191);
+$link: rgb(0,188,212);
+$btn-1: rgb(73,76,100);
+$btn-2: rgb(223,229,232);
+$btn-3: rgb(245,247,246);
+$btn-4: rgb(57,61,80);
+
+$colors:(
+    "primary": $primary,
+    "secondary": $secondary,
+    "cart": $cart,
+    "cart-1": $cart-1,
+    "cart-2": $cart-2,
+    "text": $text,
+    "text2": $text2,
+    "text3": $text3,
+    "text4": $text4,
+    "link": $link,
+    "btn-1": $btn-1,
+    "btn-2": $btn-2,
+    "btn-3": $btn-3,
+    "btn-4": $btn-4,
+    "white": #fff,
+    "black": #000,
+);

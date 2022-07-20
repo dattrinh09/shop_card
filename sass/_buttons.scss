@@ -1,0 +1,16 @@
+%btn-custom{
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+@mixin btnSize($height, $width, $pd, $pl){
+    @extend %btn-custom;
+    height: $height;
+    width: $width;
+    padding-top: $pd;
+    padding-left: $pl;
+}

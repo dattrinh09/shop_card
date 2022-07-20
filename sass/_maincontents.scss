@@ -1,0 +1,213 @@
+@mixin inputCustom($height, $width){
+    width: $width;
+    height: $height;
+    font-size: 14px;
+    border: 1px solid $btn-2;
+    padding-left: 20px;
+    border-radius: 3px;
+    &::-webkit-input-placeholder{
+    color: $text4;
+    }
+    ::-moz-input-placeholder{
+    color: $text4;
+    }
+}
+
+%title-custom{
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 55px;
+}
+
+.main-content{
+    .container{
+        .cart-title{
+            @include displayGap(5px);
+            font-size: 24px;
+            padding-top: 90px;
+            margin-bottom: 30px;
+            font-weight: 300;
+            p:nth-child(2){
+                color: $link;
+            }
+        }
+        .cart-info{
+            border: 1px solid rgb(182,198,201);
+            tr{
+                border: 1px solid rgb(182,198,201);
+                height: 95px;
+                &:first-child{
+                    height: 60px;
+                    background-color: $cart;
+                    color: #fff;
+                    font-weight: 700;
+                }
+                &:nth-child(3), &:nth-child(5){
+                   background-color: $cart-1;
+                }
+                td{
+                    border: 0;
+                    .product{
+                        &-check{
+                            @include imgCustom(21px, 21px);
+                            display: flex;
+                            margin: auto;
+                        }
+                        &-info{
+                            @include displayGap(20px);
+                            &__img{
+                                @include imgCustom(58px, 58px);
+                                background-color: $cart-2;
+                            }
+                            &__text{
+                                padding-top: 18px;
+                                @include displayGap(10px);
+                                p:nth-child(1){
+                                    color: $link;
+                                }
+                            }
+                        }
+                        &-price, &-total{
+                            font-size: 18px;
+                            color: black;
+                        }
+                        &-quantity{
+                            @include displayGap();
+                            &__btn{
+                                box-sizing: border-box;
+                                width: 31px;
+                                height: 31px;
+                                background-color: $btn-2;
+                                padding: 5px 10px 15px 10px;
+                                cursor: pointer;
+                            }
+                            &__num{
+                                padding: 4px 14px;
+                                border: 1px solid $btn-2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .cart-promo{
+            padding: 20px;
+            border: 1px solid blue;
+            @include displayGap(20px);
+            position: relative;
+            &__coupon{
+                @include displayGap(20px);
+                .apply{
+                    &-input{
+                        @include inputCustom(50px, 260px);                        
+                    }
+                    &-btn{
+                        @include btnSize(52, 115px, 0, 0);                       
+                        border: 3px solid $link;
+                    }
+                }
+            }
+
+            &__checkout{
+                @include displayGap(20px);
+                position: absolute;
+                right: 20px;
+                .btn{
+                    &-update{
+                        @include btnSize(52px, 184px, 0, 0);
+                    }
+
+                    &-checkout{
+                        @include btnSize(52px, 184px, 12px, 20px);
+                        @include displayGap(5px);
+                        .img_checkout{
+                            @include imgCustom(25px, 25px);
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .cart-order{
+            padding-top: 80px;
+            @include displayGap(46px);
+            margin-bottom: 50px;
+            .ship{
+                width: 48%;
+                &-title{
+                    @extend %title-custom;
+                }
+
+                &-select{
+                    @include displayGap(18px);
+                    input{
+                        @include inputCustom(38px, 273px);
+                    }
+                    &__country{
+                        select{
+                            @include inputCustom(40px, 100%);
+                        }
+                        margin-bottom: 18px;
+                    }
+                }
+
+                &-update{
+                    margin-top: 18px;
+                    @include btnSize(52px, 206px, 0, 0);
+                    border: 3px solid $link;
+                }
+            }
+
+            .totals{
+                width: calc(100% - 47% - 46px);
+                &-title{
+                    @extend %title-custom;
+                }
+
+                &-table{
+                    table, tr, td{
+                        border: 1px solid $btn-2;
+                        border-collapse: collapse;
+                    }
+                    table{
+                        font-size: 14px;
+                        width: 100%;
+                        tr{
+                            td{
+                                &:nth-child(1){
+                                    width: 50%;
+                                    background-color: $cart-1;
+                                }
+                                ul{
+                                    li{
+                                        @include displayGap();
+                                        margin-bottom: 5px;
+                                        position: relative;
+                                        i{
+                                            font-size: 12px;
+                                            color: $text3;
+                                        }
+                                        p{
+                                            position: absolute;
+                                            left: 25px;
+                                            top: -2px;
+                                        }
+                                    }
+                                }
+                                padding: 20px 25px;
+                            }
+                            &:nth-child(1), &:nth-child(3){
+                                td:nth-child(2){
+                                    color: black;
+                                    font-size: 18px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

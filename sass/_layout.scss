@@ -1,0 +1,49 @@
+@use "sass:math";
+
+$grid-columns: 12;
+$grid-gaps:(
+    "0": 0,
+    "1": 10px,
+    "2": 20px,
+    "3": 30px,
+);
+$layout-values: flex-start, flex-end, center, space-between, space-around;
+
+// base layout classes
+.container{
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.row{
+    display: flex;
+    flex-flow: row wrap;    
+}
+
+//flex layout item
+@mixin styleLink {
+    text-decoration: none;
+    color: $link;
+}
+
+@mixin paddingStyle($top: 0,$bot: 0) {
+    padding-top: $top;
+    padding-bottom: $bot;
+}
+
+@mixin displayGap($gap: 0){
+    display: flex;
+    gap: $gap;
+}
+
+@mixin imgCustom($height, $width){
+    height: $height;
+    width: $width;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
