@@ -9,8 +9,8 @@
 
 @mixin btnSize($height, $width, $pd, $pl){
     @extend %btn-custom;
-    height: $height;
-    width: $width;
+    height: $height !important;
+    width: $width !important;
     padding-top: $pd;
     padding-left: $pl;
 }

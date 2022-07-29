@@ -16,7 +16,7 @@
     <!--Top Navbar-->
     <div class="top-nav bg-primary text-text">
         <div class="container">
-            <div class="row">
+            <div class="row bg-primary" id="topNav">
                 <div class="phone-num">
                     <i class="fa-solid fa-headphones"></i>
                     <p>+1 916-85-2235</p>
@@ -60,7 +60,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="menu">
+                <div class="menu" id="topNavMenu">
                     <ul class="menu-list text-text">
                         <li class="menu-list__item">
                             <a href="#my-account">
@@ -97,6 +97,9 @@
                             My Wishlist
                     </button>
                 </div>
+                <a href="javascript:void(0);" class="user-icon" onclick="topNavFun()">
+                    <i class="fa-solid fa-user"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -104,7 +107,7 @@
      <!--Navbar-->
      <div class="nav text-text2">
         <div class="container">
-            <div class="row">
+            <div class="row bg-white" id="navbar">
                 <div class="home">
                     <div class="home__icon">
                         <img src="thegem_icon.svg" alt="home icon">
@@ -113,7 +116,10 @@
                         <h1><a href="#home">THEGEM</a></h1>
                     </div>
                 </div>
-                <div class="menu">
+                <a href="javascript:void(0);" class="menu-bars" id="menuListIcon" onclick="navFun()">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+                <div class="menu" id="navMenu">
                     <ul class="menu-list">
                         <li class="menu-list__item">
                             <a href="#home">HOME</a>
@@ -480,6 +486,48 @@
             </div>
         </div>
      </div>
+
+     <!---Modal-->
+     <div class="modal" id="modal">
+        <div class="modal__overlay"></div>
+     </div>
+
+     <!--Responsive javascript-->
+     <script>
+        function topNavFun(){
+            var topNavMenu = document.getElementById("topNavMenu")
+            var modal = document.getElementById("modal")
+            var topNav = document.getElementById("topNav")
+            if(topNavMenu.className === "menu"){
+                topNavMenu.className += "-res"
+                modal.style.display = "flex"
+                topNav.style.zIndex = "20"
+            }else{
+                topNavMenu.className = "menu"
+                modal.style.display = "none"
+                topNav.style.zIndex = "0"
+            }
+
+        }
+
+        function navFun(){
+            var navMenu = document.getElementById("navMenu")
+            var icon = document.getElementById("menuListIcon")
+            var modal = document.getElementById("modal")
+            var navbar = document.getElementById("navbar")
+            if(navMenu.className === "menu"){
+                navMenu.className += "-res"
+                icon.innerHTML = `<i class="fa-solid fa-xmark"></i>`
+                modal.style.display = "flex"
+                navbar.style.zIndex = "10"
+            }else{
+                navMenu.className = "menu"
+                icon.innerHTML = `<i class="fa-solid fa-bars"></i>`
+                modal.style.display = "none"
+                navbar.style.zIndex = "0"
+            }
+        }
+     </script>
 </body>
 
 </html>

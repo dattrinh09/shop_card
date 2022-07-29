@@ -1,91 +1,103 @@
 .nav{
-    @include paddingStyle(30px, 30px);
-    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
-    .home{
-        width: 14%;
-        @include displayGap();
-        &__icon{
-            @include imgCustom(40px, 40px);
-        }
-    
-        &__text{
-            h1{
-                font-family: 'Montserrat', sans-serif;
-                position: relative;
-                font-size: 30px;
-                font-weight: 700;
-                word-spacing: 1px;
-                a{
-                    position: absolute;
-                    top: 3px;
-                    left: 10px;
-                }
-            }
-        }
-    }
-    
-    .menu{
-        box-sizing: border-box;
-        @include displayGap();
-        font-size: 16px;
-        padding-left: 115px;
-        width: 86%;
-        &-list{
-            padding-top: 12px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            @include displayGap(55px);
-            &__item:nth-child(5){
-                position: relative;
-                &::after{
-                    content: '';
-                    height: 30px;
-                    width: 80px;
-                    top: -21%;
-                    left: -64%;
-                    position: absolute;
-                    border: 3px solid black;
-                }
-            }
-            a:hover{
-                color: $link;
-            }
-        }
-        &-lang{
-            margin-left: 45px;
-            padding-top: 12px;
-            @include displayGap(20px);
-            &__img{
-                width: 20px;
-                height: 18px;
-                img{
-                    width: 100%;
-                }
-            }
-            &__basket{
+    .container{
+        .row{
+            @include paddingStyle(30px, 30px);
+            //box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+            .home{
+                width: 14%;
                 @include displayGap();
-                position: relative;
-                .basket-tag{
-                    box-sizing: border-box;
-                    width: 22px;
-                    height: 17px;
-                    text-align: center;
-                    color: white;
-                    position: absolute;
-                    top: 2px;
-                    left: 30px;
-                    p{
-                        position: absolute;
-                        left: 5px;
-                        bottom: 0;
+                &__icon{
+                    @include imgCustom(40px, 40px);
+                }
+            
+                &__text{
+                    h1{
+                        font-family: 'Montserrat', sans-serif;
+                        position: relative;
+                        font-size: 30px;
+                        font-weight: 700;
+                        word-spacing: 1px;
+                        a{
+                            position: absolute;
+                            top: 3px;
+                            left: 10px;
+                        }
                     }
-                    &::before{
-                        content: "";
-                        position: absolute;
-                        left: -8px;
-                        border-top: 8px solid transparent;
-                        border-right: 8px solid $link;
-                        border-bottom: 8px solid transparent;
+                }
+            }
+
+            .menu-bars{
+                display: none;
+            }
+            
+            .menu{
+                padding-right: 32px;
+                box-sizing: border-box;
+                @include displayGap();
+                font-size: 16px;
+                //padding-left: 115px;
+                justify-content: flex-end;
+                width: 86%;
+                &-list{
+                    padding-top: 12px;
+                    font-family: 'Montserrat', sans-serif;
+                    font-weight: 900;
+                    min-width: 75%;
+                    @include displayGap(50px);
+                    &__item:nth-child(5){
+                        position: relative;
+                        &::after{
+                            content: '';
+                            height: 30px;
+                            width: 80px;
+                            top: -21%;
+                            left: -64%;
+                            position: absolute;
+                            border: 3px solid black;
+                        }
+                    }
+                    a:hover{
+                        color: $link;
+                        cursor: pointer;
+                    }
+                }
+                &-lang{
+                    padding-left: 15px;
+                    padding-top: 12px;
+                    @include displayGap(20px);
+                    &__img{
+                        width: 20px;
+                        height: 18px;
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    &__basket{
+                        @include displayGap();
+                        position: relative;
+                        .basket-tag{
+                            box-sizing: border-box;
+                            width: 22px;
+                            height: 17px;
+                            text-align: center;
+                            color: white;
+                            position: absolute;
+                            top: 2px;
+                            left: 30px;
+                            p{
+                                position: absolute;
+                                left: 5px;
+                                bottom: 0;
+                            }
+                            &::before{
+                                content: "";
+                                position: absolute;
+                                left: -8px;
+                                border-top: 8px solid transparent;
+                                border-right: 8px solid $link;
+                                border-bottom: 8px solid transparent;
+                            }
+                        }
                     }
                 }
             }

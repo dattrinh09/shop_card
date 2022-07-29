@@ -58,6 +58,7 @@
                             @include displayGap(20px);
                             &__img{
                                 @include imgCustom(58px, 58px);
+                                min-width: 58px;
                                 background-color: $cart-2;
                             }
                             &__text{
@@ -93,26 +94,30 @@
         }
         .cart-promo{
             padding: 20px;
+            padding-top: 0;
             border: 1px solid blue;
-            @include displayGap(20px);
-            position: relative;
+            @include displayGap();
+            flex-wrap: wrap;
+            justify-content: space-between;
             &__coupon{
+                //width: 34%;
+                padding-top: 20px;
                 @include displayGap(20px);
                 .apply{
                     &-input{
                         @include inputCustom(50px, 260px);                        
                     }
                     &-btn{
-                        @include btnSize(52, 115px, 0, 0);                       
+                        @include btnSize(52px, 115px, 0, 0);                       
                         border: 3px solid $link;
                     }
                 }
             }
 
             &__checkout{
+                //margin-top: 20px;
+                padding-top: 20px;
                 @include displayGap(20px);
-                position: absolute;
-                right: 20px;
                 .btn{
                     &-update{
                         @include btnSize(52px, 184px, 0, 0);
@@ -133,6 +138,7 @@
         .cart-order{
             padding-top: 80px;
             @include displayGap(46px);
+            //flex-wrap: wrap;
             margin-bottom: 50px;
             .ship{
                 width: 48%;
@@ -143,7 +149,7 @@
                 &-select{
                     @include displayGap(18px);
                     input{
-                        @include inputCustom(38px, 273px);
+                        @include inputCustom(38px, 48%);
                     }
                     &__country{
                         select{

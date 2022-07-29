@@ -7,13 +7,15 @@
 //colors
 @import 'colors';
 
-//grid system
-@import 'breakpoints';
+//layout
 @import 'layout';
 @import 'buttons';
 
-//
+//layout items
 @import 'topnavbars';
 @import 'navbars';
 @import 'woocarts';
 @import 'maincontents';
+
+//responsive
+@import 'responsive';
